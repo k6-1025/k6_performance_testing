@@ -30,3 +30,19 @@ github.com/ProgrammerZamanNow/belajar-nodejs-restful-api
 //Itu karena K6 memang dibuat dengan Golang, jadi tidak berjalan diatas NodeJS. Untuk menginstall K6 Library bisa dengan perintah :
 npm install k6 //akan menginstall node_modules, tidak kode JS hanya untuk bantuan untuk import, auto-complete di nodeJS. Kode JS nya tetap di app K6 nya sendiri
 npm install --save-dev @types/k6 //akan menginstall kode metadata/auto complete untuk memudahkan ketika menulis kode JS seperti auto-complete/suggest
+
+//Script
+//Merupakan file JavaScript yg berisikan kode cara melakukan performance test dan juga pengaturan/skenario test yg ingin dilakukan
+//Untuk membuat Script K6, cukup dengan membuat file JavaScript. Atau bisa dengan cara lebih mudah dengan perintah :
+k6 new <lokasi>/<nama-file>.js
+//Maka akan otomatis dibuatkan file baru yang sudah berisi script K6 sederhana untuk performance testing
+//Setelah file script terbuat, bisa ganti http.get ke url yang akan dilakukan pengetesan performance
+//Untuk menjalankan performance test sesuai dengan script yang sudah dibuat, bisa dengan perintah :
+k6 run <lokasi>/<nama-file>.js
+//Script untuk K6 terdiri dari 2 bagian: Options & Default Function
+//Options : sebuah variable yg digunakan untuk melakukan pengaturan, misal jumlah virtual user (VU), berapa lama durasi melakukan pengujian, dan banyak aturan lain yg bisa dipakai
+//Default Function : function yg dijalankan oleh K6 sesuai dgn pengaturan di variable options, akan berisi kode untuk skenario performance testing
+//Cara K6 bekerja adalah :
+//1. Saat pertama dijalankan, K6 membaca informasi pengaturan dari options (misal menggunakan 10 VU, total durasi 30s)
+//2. Setelah K6 tahu pengaturannya, K6 akan jalankan default function sebanyak pengaturan yg ditentukan (misal call 10 proses/VU terus-menerus selama 30s)
+//3. Namun jika ada kode sleep di default function maka sebelum selesai, proses akan berhenti dulu sekitar waktu sleep (misal 1s)
