@@ -13,3 +13,7 @@ k6.io/ //K6 dibuat oleh perusahaan Grafana Labs
 //Tapi bukan berarti semua fitur JavaScript didukung oleh K6, hal ini karena K6 sendiri dibuat menggunakan Golang
 //K6 menggunakan library bernama Goja untuk mengeksekusi kode JavaScript di Golang
 github.com/dop251/goja //Oleh karena itu fitur JavaScript yang bisa digunakan terbatas pada fitur yang dipunyai oleh Goja
+
+//K6 Instalation
+//K6 dibuat menggunakan bahasa pemrograman Golang sehingga bisa dijalankan di berbagai sistem operasi
+grafana.com/docs/k6/latest/get-started/installation/ //instalation K6 documentation
