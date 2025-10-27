@@ -21,3 +21,12 @@ grafana.com/docs/k6/latest/get-started/installation/ //instalation K6 documentat
 //Example Application
 //Dalam praktek belajar K6 disini akan menggunakan aplikasi NodeJS RESTful API untuk coba uji performanya menggunakan K6
 github.com/ProgrammerZamanNow/belajar-nodejs-restful-api
+
+//Create Project
+//Untuk membuat project K6 sama seperti ketika membuat project NodeJS, bisa dengan membuat folder lalu di dalam folder execute: npm init
+//Kemudian ubah type di package.json menjadi module
+//Setelah itu perlu install K6 Library, K6 sendiri sudah menyediakan library yg bisa digunakan untuk memudahkan pengujian
+//Tapi perlu diingat, NPM package library yg digunakan sebenarnya tidak berisi kode JavaScript sama sekali, hanya berisi informasi metadata/memudahkan dalam auto complete
+//Itu karena K6 memang dibuat dengan Golang, jadi tidak berjalan diatas NodeJS. Untuk menginstall K6 Library bisa dengan perintah :
+npm install k6 //akan menginstall node_modules, tidak kode JS hanya untuk bantuan untuk import, auto-complete di nodeJS. Kode JS nya tetap di app K6 nya sendiri
+npm install --save-dev @types/k6 //akan menginstall kode metadata/auto complete untuk memudahkan ketika menulis kode JS seperti auto-complete/suggest
