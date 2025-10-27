@@ -1,0 +1,26 @@
+{
+  "name": "k6_performance_testing",
+  "version": "1.0.0",
+  "description": "Learn K6 for Performance Testing",
+  "main": "k6.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k6-1025/k6_performance_testing.git"
+  },
+  "author": "M. Hasan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k6-1025/k6_performance_testing/issues"
+  },
+  "homepage": "https://github.com/k6-1025/k6_performance_testing#readme",
+  "type": "module",
+  "dependencies": {
+    "k6": "^0.0.0"
+  },
+  "devDependencies": {
+    "@types/k6": "^1.3.1"
+  }
+}
