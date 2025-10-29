@@ -3,9 +3,14 @@ import { sleep } from 'k6';
 import { expect } from "https://jslib.k6.io/k6-testing/0.5.0/index.js";
 
 export const options = {
-  vus: 10,
-  duration: '30s',
-  summaryTrendStats: ['avg', 'min', 'med', 'max', 'p(90)', 'p(95)', 'p(99)']
+//  vus: 10,
+//  duration: '30s',
+//  summaryTrendStats: ['avg', 'min', 'med', 'max', 'p(90)', 'p(95)', 'p(99)']
+    stages: [
+        {duration:'10s', target:20},
+        {duration:'10s', target:10},
+        {duration:'10s', target:0}
+    ]
 };
 
 export default function() {

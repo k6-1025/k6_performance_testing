@@ -76,3 +76,8 @@ grafana.com/docs/k6/latest/results-output/real-time/ //dokumentasi third party d
 //Untuk mengaktifkan fitur web dashboard, harus mengaktifkan menggunakan environment variable
 grafana.com/docs/k6/latest/results-output/web-dashboard/
 export K6_WEB_DASHBOARD=true //perlu set web dashboard dulu, setelah itu jalankan K6 seperti biasa
+
+//Stages
+//K6 memiliki fitur untuk meningkatkan/menurunkan virtual user ketika melakukan pengujian dengan atribut Stages di Options
+//Dengan ini jadi bisa meningkatkan jumlah user dalam durasi tertentu dan menurunkan jumlah user dalam durasi tertentu
+grafana.com/docs/k6/latest/using-k6/k6-options/reference/#stages
