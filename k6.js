@@ -56,3 +56,16 @@ grafana.com/docs/k6/latest/using-k6/metrics/reference/ //dokumentasi informasi o
 ['avg', 'min', 'med', 'max', 'p(90)', 'p(95)']
 //Ini bisa dibuah dengan menambahkan options menggunakan key summaryTrendStats : []
 grafana.com/docs/k6/latest/using-k6/k6-options/reference/#summary-trend-stats
+
+//Realtime Output
+//Summary output hanya akan membuat report setelah proses performance test selesai
+//Namun bisa juga jika butuh informasi secara realtime dengan realtime output dari K6
+//Secara default K6 bisa mengirim realtime output ke file JSON/CSV
+k6 run --out csv=test_result.csv script.js
+grafana.com/docs/k6/latest/results-output/real-time/csv
+k6 run --out json=test_result.json script.js
+grafana.com/docs/k6/latest/results-output/real-time/json
+//Ketika realtime output dijalankan, maka akan secara realtime update file outputnya sesuai hasil iterasi yang dilakukan
+//Namun biasanya ini jarang dilakukan, karena biasanya menggunakan third party untuk visualisasi hasil realtime
+//Namun secara default tidak bisa mengirim realtime ke third party, harus membuat ulang app K6 dengan menambahkan library third party tsb
+grafana.com/docs/k6/latest/results-output/real-time/ //dokumentasi third party di K6

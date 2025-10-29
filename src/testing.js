@@ -11,5 +11,5 @@ export const options = {
 export default function() {
   let res = http.get('http://localhost:3000/ping');
   expect.soft(res.status).toBe(200);
-//  sleep(1);
+  sleep(1);
 }
