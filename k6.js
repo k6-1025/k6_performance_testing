@@ -46,3 +46,13 @@ k6 run <lokasi>/<nama-file>.js
 //1. Saat pertama dijalankan, K6 membaca informasi pengaturan dari options (misal menggunakan 10 VU, total durasi 30s)
 //2. Setelah K6 tahu pengaturannya, K6 akan jalankan default function sebanyak pengaturan yg ditentukan (misal call 10 proses/VU terus-menerus selama 30s)
 //3. Namun jika ada kode sleep di default function maka sebelum selesai, proses akan berhenti dulu sekitar waktu sleep (misal 1s)
+
+//Summary Output
+//Setelah K6 menjalankan performance testing, maka K6 akan menghasilkan output summary yg defaultnya ditampilkan dalam console/terminal
+//Namun summary ini bisa disimpan dalam bentuk file JSON menggunakan perintah
+k6 run <lokasi>/<nama-file>.js --summary-export <lokasi-output>.json
+grafana.com/docs/k6/latest/using-k6/metrics/reference/ //dokumentasi informasi output K6
+//Secara default statistik yg digunakan tiap metric dari hasil pengujian K6 adalah :
+['avg', 'min', 'med', 'max', 'p(90)', 'p(95)']
+//Ini bisa dibuah dengan menambahkan options menggunakan key summaryTrendStats : []
+grafana.com/docs/k6/latest/using-k6/k6-options/reference/#summary-trend-stats
