@@ -69,3 +69,10 @@ grafana.com/docs/k6/latest/results-output/real-time/json
 //Namun biasanya ini jarang dilakukan, karena biasanya menggunakan third party untuk visualisasi hasil realtime
 //Namun secara default tidak bisa mengirim realtime ke third party, harus membuat ulang app K6 dengan menambahkan library third party tsb
 grafana.com/docs/k6/latest/results-output/real-time/ //dokumentasi third party di K6
+
+//Web Dashboard
+//K6 memiliki web dashboard untuk melihat realtime output dan summary output ketika K6 melakukan pengujian
+//Meskipun secara visual dan kelengkapan, Web dashboard ini tidak selengkap third party yang tersedia
+//Untuk mengaktifkan fitur web dashboard, harus mengaktifkan menggunakan environment variable
+grafana.com/docs/k6/latest/results-output/web-dashboard/
+export K6_WEB_DASHBOARD=true //perlu set web dashboard dulu, setelah itu jalankan K6 seperti biasa
