@@ -81,3 +81,11 @@ export K6_WEB_DASHBOARD=true //perlu set web dashboard dulu, setelah itu jalanka
 //K6 memiliki fitur untuk meningkatkan/menurunkan virtual user ketika melakukan pengujian dengan atribut Stages di Options
 //Dengan ini jadi bisa meningkatkan jumlah user dalam durasi tertentu dan menurunkan jumlah user dalam durasi tertentu
 grafana.com/docs/k6/latest/using-k6/k6-options/reference/#stages
+
+//HTTP Request
+//K6 dilengkapi library bawaan untuk melakukan HTTP Test yaitu k6/http, yg bisa melakukan HTTP Request
+//Library k6/http ini bukan untuk melakukan pengetesan web browser seperti selenium, lebih mirip seperti postman
+grafana.com/docs/k6/latest/javascript-api/k6-http/ //Hampir semua HTTP method didukung k6/http
+//Setiap memanggil function di k6/http untuk mengirim HTTP Request, akan menghasilkan HTTP Response
+//Response tsb bisa digunakan untuk HTTP Request selanjutnya, misal setelah register gunakan balikan token untuk login
+grafana.com/docs/k6/latest/javascript-api/k6-http/response/
