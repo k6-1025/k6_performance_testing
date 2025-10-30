@@ -89,3 +89,9 @@ grafana.com/docs/k6/latest/javascript-api/k6-http/ //Hampir semua HTTP method di
 //Setiap memanggil function di k6/http untuk mengirim HTTP Request, akan menghasilkan HTTP Response
 //Response tsb bisa digunakan untuk HTTP Request selanjutnya, misal setelah register gunakan balikan token untuk login
 grafana.com/docs/k6/latest/javascript-api/k6-http/response/
+
+//Fail Test
+//Terkadang perlu tahu apakah request yang dilakukan di K6 sukses atau gagal
+//Untuk memberi tahu test yang dilakukan gagal, bisa menggunakan fail() function di k6 library
+//Jika memanggil function fail(), otomatis iterasi akan dihentikan, kode selanjutnya tidak dieksekusi & langsung ke iterasi selanjutnya
+grafana.com/docs/k6/latest/javascript-api/k6/fail/
