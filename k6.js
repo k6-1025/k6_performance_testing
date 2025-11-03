@@ -95,3 +95,10 @@ grafana.com/docs/k6/latest/javascript-api/k6-http/response/
 //Untuk memberi tahu test yang dilakukan gagal, bisa menggunakan fail() function di k6 library
 //Jika memanggil function fail(), otomatis iterasi akan dihentikan, kode selanjutnya tidak dieksekusi & langsung ke iterasi selanjutnya
 grafana.com/docs/k6/latest/javascript-api/k6/fail/
+
+//Checks
+//Checks mirip Assertion di unit test, jika pada fail() ketika ada test gagal akan berhenti
+//Maka di checks jika ada yg gagal tidak akan terjadi error/eksekusi kode akan tetap dijalankan
+//Check mengembalikan return boolean berupa pengecekan sukses atau gagal
+//Setelah pengecekan selesai, K6 akan memberi informasi persentase sukses & gagal dari pengecekan yg dilakukan
+grafana.com/docs/k6/latest/javascript-api/k6/check/
