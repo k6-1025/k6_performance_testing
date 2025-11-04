@@ -108,3 +108,11 @@ grafana.com/docs/k6/latest/javascript-api/k6/check/
 //Misal seperti: id iterasi, id virtual user, dan lain-lain. K6 menyediakan module k6/execution untuk hal tersebut
 grafana.com/docs/k6/latest/javascript-api/k6-execution/
 //Contoh: buat dulu 10 virtual user berbeda, kemudian buat test login dengan 10 user tersebut menggunakan id vu execution nya
+
+//Test Life Cycle
+//Saat menjalankan testing, K6 akan menjalankan dalam beberapa tahapan atau bisa disebut life cycle
+//Tahapan K6 dimulai dari init, setup, default function dan tearDown
+//Init: tahapan K6 membaca semua file script, akan dilakukan sekali saja dan wajib dilakukan
+//Function Setup(): dipanggil sekali diawal untuk mempersiapkan data, bisa mengembalikan data yang nanti bisa digunakan oleh default function & tidak wajib dibuat
+//Default function: dipanggil terus menerus sampai testing selesai. Jika Function setup() mengembalikan data, default function bisa menerima parameter data & wajib dibuat
+//Function teardown(): dieksekusi setelah pengujian selesai & tidak wajib dibuat
