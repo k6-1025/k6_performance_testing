@@ -123,3 +123,10 @@ grafana.com/docs/k6/latest/javascript-api/k6-execution/
 //Untuk menggunakannya, sama seperti penggunaan JS Modules, bisa dengan import file tersebut
 //Ini sangat berguna ketika script sudah sangat banyak dan agar tidak banyak duplikasi kode bisa dipisahkan di module terpisah
 //Contoh: perintah HTTP yang sering dilakukan seperti login, register, get user bisa disimpan di module terpisah
+
+
+//Environment Variable
+//Kadang saat membuat script ada pengaturan yang tidak bisa di hardcode di dalam scriptnya
+//Biasanya pengaturan itu disimpan dalam Env Variable sistem operasi yg digunakan
+//Untuk membaca Env Variable bisa menggunakan variable __ENV pada script yang dibuat
+//Selanjutnya jangan lupa ketika menjalankan scriptnya, pasang dahulu nilai Env Variable nya
