@@ -116,3 +116,10 @@ grafana.com/docs/k6/latest/javascript-api/k6-execution/
 //Function Setup(): dipanggil sekali diawal untuk mempersiapkan data, bisa mengembalikan data yang nanti bisa digunakan oleh default function & tidak wajib dibuat
 //Default function: dipanggil terus menerus sampai testing selesai. Jika Function setup() mengembalikan data, default function bisa menerima parameter data & wajib dibuat
 //Function teardown(): dieksekusi setelah pengujian selesai & tidak wajib dibuat
+
+//Modules
+//Seperti dijelaskan diawal, bahwa di JavaScript terdapat fitur JavaScript Modules
+//Fitur ini bisa digunakan untuk menyimpan kode JS di file yang terpisah dengan K6 script
+//Untuk menggunakannya, sama seperti penggunaan JS Modules, bisa dengan import file tersebut
+//Ini sangat berguna ketika script sudah sangat banyak dan agar tidak banyak duplikasi kode bisa dipisahkan di module terpisah
+//Contoh: perintah HTTP yang sering dilakukan seperti login, register, get user bisa disimpan di module terpisah
