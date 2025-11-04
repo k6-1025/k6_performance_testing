@@ -102,3 +102,9 @@ grafana.com/docs/k6/latest/javascript-api/k6/fail/
 //Check mengembalikan return boolean berupa pengecekan sukses atau gagal
 //Setelah pengecekan selesai, K6 akan memberi informasi persentase sukses & gagal dari pengecekan yg dilakukan
 grafana.com/docs/k6/latest/javascript-api/k6/check/
+
+//Execution Context Variables
+//Saat menjalankan pengujian, kadang ingin tahu informasi tentang eksekusi yang sedang dijalankan K6
+//Misal seperti: id iterasi, id virtual user, dan lain-lain. K6 menyediakan module k6/execution untuk hal tersebut
+grafana.com/docs/k6/latest/javascript-api/k6-execution/
+//Contoh: buat dulu 10 virtual user berbeda, kemudian buat test login dengan 10 user tersebut menggunakan id vu execution nya
