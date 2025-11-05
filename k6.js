@@ -162,3 +162,8 @@ grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-arrival-rate
 //-ramping-arrival-rate, executor yang sama seperti constant-arrival-rate
 //hanya saja jumlah iterasi bisa naik dan turun mengikuti stage yang ditentukan
 grafana.com/docs/k6/latest/using-k6/scenarios/executors/ramping-arrival-rate
+//Salah satu tantangan ketika menggunakan Scenario adalah, tidak bisa membedakan setup dan teardown function per scenario
+//Sehingga jika menggunakan setup dan teardown function, maka akan menggunakan function yang sama untuk semua scenario
+//Sampai saat ini, masih belum bisa dilakukan setup dan teardown function terpisah untuk tiap scenario
+github.com/grafana/k6/issues/1638
+grafana.com/docs/k6/latest/using-k6/scenarios/ //Dokumentasi Scenarios lebih lengkap
