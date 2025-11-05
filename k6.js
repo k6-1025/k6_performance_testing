@@ -190,3 +190,10 @@ grafana.com/docs/k6/latest/using-k6/thresholds/
 //Thresholds, dikenakan terhadap metric baik itu build-in metric ataupun custom metric yang sudah dibuat sendiri.
 //Aturan thresholds, harus mengikuti dengan jenis metric yang digunakan
 grafana.com/docs/k6/latest/javascript-api/k6-metrics/
+
+//Javascript Library
+//K6 menyediakan JavaScript library yang bisa digunakan untuk mempermudah ketika membuat script
+grafana.com/docs/k6/latest/javascript-api/
+//Selain JavaScript Library yang sudah disediakan langsung di dalam K6 nya
+//K6 juga menyediakan library yang bisa digunakan secara remote
+jslib.k6.io/
