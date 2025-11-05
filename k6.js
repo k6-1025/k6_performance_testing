@@ -124,9 +124,41 @@ grafana.com/docs/k6/latest/javascript-api/k6-execution/
 //Ini sangat berguna ketika script sudah sangat banyak dan agar tidak banyak duplikasi kode bisa dipisahkan di module terpisah
 //Contoh: perintah HTTP yang sering dilakukan seperti login, register, get user bisa disimpan di module terpisah
 
-
 //Environment Variable
 //Kadang saat membuat script ada pengaturan yang tidak bisa di hardcode di dalam scriptnya
 //Biasanya pengaturan itu disimpan dalam Env Variable sistem operasi yg digunakan
 //Untuk membaca Env Variable bisa menggunakan variable __ENV pada script yang dibuat
 //Selanjutnya jangan lupa ketika menjalankan scriptnya, pasang dahulu nilai Env Variable nya
+
+//Scenario
+//Saat scenario test yg dibuat semakin banyak, maka otomatis isi kode default function akan semakin banyak
+//Dan semakin banyak kodenya otomatis semakin sulit untuk dimantain, sebenarnya bisa dibuat dalam beberapa script file K6
+//Tapi masalahnya di K6 tidak bisa menjalankan beberapa file K6 sekaligus, harus dijalankan satu per satu
+//Untungnya K6 punya fitur bernama Scenario, yang bisa membuat banyak function dengan option yang berbeda-beda
+//Sehingga bisa membuat banyak scenario dalam function yg berbeda-beda dalam satu file script
+//Untuk membuat scenario bisa dengan atribut scenarios di opstions
+//Scenario berisi key dan value, dimana value dari scenario akan berisi options dari tiap scenario
+//Salah satu kelebihan Scenario adalah bisa menentukan function mana yg akan dijalankan di tiap iterasi
+//Tiap Scenario bisa menggunakan function yg sama/berbeda, juga bisa menyebut nama function dalam atribut exec
+//Tiap scenario, VU akan dijalankan oleh executor. Terdapat banyak executor namun scara garis besar terbagi 3 yaitu:
+//Berdasarkan jumlah iterasi (number of iteration)
+//-shared-iterations, executor yg total iterasinya disharing ke VU yg ada. Misal jumlah iterasi 1000 & 100 VU
+//maka 1000 iterasi akan disharing ke 10 virtual user untuk diselesaikan, jadi tiap VU dapat 100 iterasi
+//tapi bisa aja dibagi nya tidak rata karena bisa jadi ada VU yg lambat dapat response akhirnya dapat lebih sedikit iterasi
+grafana.com/docs/k6/latest/using-k6/scenarios/executors/shared-iterations/
+//-per-vu-iterations, executor yg setiap VU ditentukan jumlah iterasinya, misal 10 VU dan tiap VU melakukan 100 iterasi. Jumlah iterasi pasti fix
+grafana.com/docs/k6/latest/using-k6/scenarios/executors/per-vu-iterations/
+//Berdasarkan jumlah virtual user (number of VU)
+//-constant-vus, executor yang ditentukan jumlah virtual user
+//dan tiap virtual user akan selalu melakukan melakukan iterasi sampai durasi waktu yang sudah ditentukan
+grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-vus/
+//-ramping-vus, executor yang akan membuat virtual user sejumlah yang ditentukan di tiap stage
+//dan akan bergerak naik atau turun mengikuti stage selanjutnya, semua stage selesai
+grafana.com/docs/k6/latest/using-k6/scenarios/executors/ramping-vus
+//Berdasarkan kapasitas iterasi (iteration rate)
+//-constant-arrival-rate, executor yang akan melakukan iterasi secara constant sejumlah yang ditentukan
+//misal ditentukan 100 iterasi per 1 detik selama 30 detik, artinya tiap 1 detik akan melakukan 100 iterasi selama 30 detik
+grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-arrival-rate
+//-ramping-arrival-rate, executor yang sama seperti constant-arrival-rate
+//hanya saja jumlah iterasi bisa naik dan turun mengikuti stage yang ditentukan
+grafana.com/docs/k6/latest/using-k6/scenarios/executors/ramping-arrival-rate
