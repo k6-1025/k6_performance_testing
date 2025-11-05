@@ -181,3 +181,12 @@ grafana.com/docs/k6/latest/using-k6/metrics/reference/
 //K6 sudah menyediakan library untuk membuat semua jenis Metric yang tersedia
 //Namun perlu diperhatikan, harus menambahkan data ke Metric secara manual
 grafana.com/docs/k6/latest/javascript-api/k6-metrics/
+
+//Thresholds
+//Secara default, hasil pengujian akan selalu dianggap sukses, baik itu ada yang error atau tidak
+//K6 bisa memberi pengaturan thresholds, untuk menentukan batas ambang apakah sebuah pengujian sukses atau gagal
+//Jika hasil pengujian sesuai dengan thresholds yang ditentukan, maka dianggap sukses, jika tidak, maka dianggap gagal
+grafana.com/docs/k6/latest/using-k6/thresholds/
+//Thresholds, dikenakan terhadap metric baik itu build-in metric ataupun custom metric yang sudah dibuat sendiri.
+//Aturan thresholds, harus mengikuti dengan jenis metric yang digunakan
+grafana.com/docs/k6/latest/javascript-api/k6-metrics/
