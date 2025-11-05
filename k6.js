@@ -167,3 +167,17 @@ grafana.com/docs/k6/latest/using-k6/scenarios/executors/ramping-arrival-rate
 //Sampai saat ini, masih belum bisa dilakukan setup dan teardown function terpisah untuk tiap scenario
 github.com/grafana/k6/issues/1638
 grafana.com/docs/k6/latest/using-k6/scenarios/ //Dokumentasi Scenarios lebih lengkap
+
+//Metrix
+//Saat menjalankan pengujian menggunakan K6, result dari outputnya adalah berupa data metric
+//K6 sendiri membagi metric menjadi beberapa kategori :
+//Counters, untuk menghitup jumlah
+//Gauges, untuk melacak smallest (terkecil), largest (terbesar), dan latest (terbaru)
+//Rates, melacak seberapa sering nilai bukan nol muncul
+//Trends, menghitung statistik untuk beberapa nilai (seperti rata-rata, persentil, dan lain-lain)
+//Secara default, sudah disediakan Metric bawaan dari K6 ketika selesai running pengujian, sehingga tidak perlu membuat Metric secara manual
+grafana.com/docs/k6/latest/using-k6/metrics/reference/
+//Jika ternyata Metric bawaan dari K6 masih belum cukup, bisa membuat Metric sendiri
+//K6 sudah menyediakan library untuk membuat semua jenis Metric yang tersedia
+//Namun perlu diperhatikan, harus menambahkan data ke Metric secara manual
+grafana.com/docs/k6/latest/javascript-api/k6-metrics/
